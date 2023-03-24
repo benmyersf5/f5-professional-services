@@ -11,6 +11,16 @@
     The playbook will prompt you to enter your F5 case number, which will be used as part of the filename of the saved qkview, 
     along with the hostname of the device and the date the snapshot was taken.   The qkview file will be saved locally on the 
     ansible controller in the /var/tmp/ directory. 
+    
+    
+##  Variables
+
+    The variables listed below can be modified to change the filename structure and the location of the file download. 
+
+        vars:
+          fileName: "{{ inventory_hostname }}.{{ caseNumber }}.{{ ansible_date_time.date }}.qkview"
+
+          saveLoc: "/var/tmp/"
 
 
 ## Running Playbook
